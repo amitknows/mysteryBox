@@ -2,16 +2,16 @@ import { resend } from "@/lib/resend";
 import VerificationEmail from "../../emails/VerificationEmail";
 import { ApiResponse } from "@/types/ApiResponse";
 
-export async function sendVerificatioEmail(
+export async function sendVerificationEmail(
   email: string,
   username: string,
   verifyCode: string
 ): Promise<ApiResponse> {
   try {
     await resend.emails.send({
-      from: "you@example.com",
-      to: email,
-      subject: "Mystrey Message Verificatio Code",
+      from: 'onboarding@resend.dev',
+      to: 'amitknowsyou@gmail.com',//we pass here "email" prop but now RESEND can only send email to a single address for testing purpose.
+      subject: "Mystrey Message Verification Code",
       react: VerificationEmail({ username, otp: verifyCode }),
     });
 
