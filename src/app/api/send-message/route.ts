@@ -49,7 +49,7 @@ export async function POST(request: Request) {
         success: false,
         message: "Internal Server Error",
       },
-      { status: 401 }
+      { status: 500}
     );
   }
 }
